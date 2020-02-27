@@ -9,4 +9,7 @@ Component::Component(ecs::CmpId id) :
 
 Component::~Component() {
 }
-//�DFASDFASDF�ALSDKJFPATATA
+
+//ÀDFASDFASDFÑALSDKJFPATATA
+
+//asdfjñalksdjfñlasfdePETETE
