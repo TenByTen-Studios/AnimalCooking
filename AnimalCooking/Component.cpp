@@ -9,3 +9,4 @@ Component::Component(ecs::CmpId id) :
 
 Component::~Component() {
 }
+//ÀDFASDFASDFÑALSDKJFPATATA
