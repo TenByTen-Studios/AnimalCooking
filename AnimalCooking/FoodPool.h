@@ -3,21 +3,13 @@
 #include "ObjectPool.h"
 class Food;
 
-enum FoodType {
-	SlicedTomato,
-	SmashedTomato,
-	SlicedLettuce,
-	WrongFood,
-	RawMeat,
-	CookedMeat
-};
-
 class FoodPool : public Component
 {
 public:
 	FoodPool();
 	vector<Food*>* getPool();
 	void AddFood(Food* food);
+	void RemoveFood(std::vector<Food*>::iterator it);
 private:
 	vector<Food*> foods_;
 };

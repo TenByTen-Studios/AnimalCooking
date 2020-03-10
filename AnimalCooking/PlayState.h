@@ -1,6 +1,9 @@
 #pragma once
 
 #include "State.h"
+#include "Food.h"
+#include "FoodMotion.h"
+#include "FoodViewer.h"
 
 #include "provisional1.h"
 #include "Provisional2.h"
