@@ -19,7 +19,7 @@ public:
 	void setFoodPool(FoodPool* foodPool, std::vector<Food*>::iterator it);
 	void Destroy();
 
-	void setSize(Vector2D newSize) { dir_ = newSize; }
+	void setSize(Vector2D newSize) { size_ = newSize; }
 	inline Vector2D getSize() { return size_; }
 
 	void setSpeed(Vector2D newDir) { dir_ = newDir; }

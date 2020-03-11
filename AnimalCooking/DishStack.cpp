@@ -11,11 +11,11 @@ void DishStack::init()
 	dishPool = GETCMP1_(DishPool);
 }
 
-Dish* DishStack::getDish()
+Dish* DishStack::getDish(Vector2D pos)
 {
 	if (dishPool->getNumDishes() < maxDishes)
 	{
-		Dish* d = new Dish();
+		Dish* d = new Dish(pos);
 		dishPool->addDish(d);		
 		return d;
 	}

@@ -5,7 +5,7 @@ using namespace std;
 class Dish
 {
  public:
-	Dish();
+	Dish(Vector2D pos_);
 	~Dish() { }
 	//Añade un ingrediente al plato	
 	void addFood(Food* f);
@@ -29,6 +29,8 @@ class Dish
 	inline Vector2D getVel() { return vel; }
 	inline int getHeight() { return height; }
 	inline int getWidth() { return width; }
+	inline void setWidth(int w) { width = w; }
+	inline void setHeight(int h) { height = h; }
 	inline void setPos(Vector2D value) { pos = value; }
 	inline void setVel(Vector2D value) { vel = value; }
 	

@@ -9,7 +9,7 @@ public:
 	 ~DishStack() { }
 
 	void init() override;
-	Dish* getDish();
+	Dish* getDish(Vector2D pos);
 	void removeDish(Dish* d);
 
 private:

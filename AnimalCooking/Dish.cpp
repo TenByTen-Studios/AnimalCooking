@@ -1,12 +1,11 @@
 #include "Dish.h"
 
-Dish::Dish() 
+Dish::Dish(Vector2D pos_)
 {
-
+	pos = pos_;
+	width = 100;
+	height = 50;
 }
-
-
-
 
 // si la lista estaba vacía pone el iterador al principio
 void Dish::addFood(Food* f)
