@@ -42,9 +42,14 @@ void Dish::previousFood() {
 		currentFood--;
 }
 void Dish::render() {
-	int i = height;
+	int k = 0;
+	//Colocamos la comida en el centro del plato y un poco más arriba del fondo del plato
+	//(teniendo en cuenta el índice la comida) y renderizamos
 	for (auto i = foods_.begin(); i != foods_.end(); i++)
 	{
+		(*i)->setPosition(Vector2D(pos.getX() + (*i)->getSize().getX() / 2,
+			pos.getY() - (*i)->getSize().getY() / 4 - (int64_t)((*i)->getSize().getY() * k)));
 		(*i)->draw();
+		k++;
 	}
 }
