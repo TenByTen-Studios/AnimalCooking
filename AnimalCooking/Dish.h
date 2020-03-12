@@ -20,6 +20,7 @@ class Dish
 	//Mueve el selector de comida atrás
 	void previousFood();
 	void render();
+	void update();
 
 
 	//Getters y setters
