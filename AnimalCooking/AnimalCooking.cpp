@@ -79,7 +79,6 @@ void AnimalCooking::handleInput() {
 			}
 		}		
 	}
-
 }
 
 void AnimalCooking::update() {

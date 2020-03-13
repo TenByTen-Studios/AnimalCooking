@@ -7,10 +7,7 @@ DishPool::DishPool() :Component(ecs::DishPool)
 
 void DishPool::addDish(Dish* d)
 {	
-	if(d!=nullptr)
-	{
-        dishes_.push_back(d);		
-	}	
+	if(d!=nullptr)dishes_.push_back(d);	
 }
 
 void DishPool::removeDish(Dish* d)

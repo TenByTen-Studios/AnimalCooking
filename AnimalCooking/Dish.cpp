@@ -6,25 +6,25 @@ Dish::Dish(Vector2D pos_)
 	width = 100;
 	height = 50;
 	vel = Vector2D(10, 10);
+	foods_ = vector<Food*>();
 }
 
 // si la lista estaba vacía pone el iterador al principio
 void Dish::addFood(Food* f)
 {
-	if (f != nullptr) {
-		foods_.push_back(f);
-		if (foods_.size() == 1)
-		{
-			currentFood = foods_.begin();
-		}
+	if (f != nullptr) 
+	{
+		foods_.push_back(f);				
+		currentFood = foods_.begin();		
 	}
 }
 
 Food* Dish::takeFood()
-{//si la lista no se ha vaciado pone el iterador al principio para evitar errores
-	if (!foods_.empty()) {
+{//si el vector no se ha vaciado pone el iterador al principio para evitar errores
+	if (!foods_.empty()) 
+	{
 		Food* aux = *currentFood;
-		//foods_.remove(*currentFood);
+		foods_.erase(currentFood);
 		if (!foods_.empty())
 			currentFood = foods_.begin();
 		return aux;
@@ -46,9 +46,10 @@ void Dish::render() {
 	//Colocamos la comida en el centro del plato y un poco más arriba del fondo del plato
 	//(teniendo en cuenta el índice la comida) y renderizamos
 	for (auto i = foods_.begin(); i != foods_.end(); i++)
-	{
+	{		
 		(*i)->setPosition(Vector2D(pos.getX() + (*i)->getSize().getX() / 2,
 			pos.getY() - (*i)->getSize().getY() / 4 - (int64_t)((*i)->getSize().getY() * k)));
+		
 		(*i)->draw();
 		k++;
 	}
