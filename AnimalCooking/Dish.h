@@ -19,12 +19,12 @@ class Dish
 	
 	//Mueve el selector de comida atrás
 	void previousFood();
+
 	void render();
 	void update();
 
-
 	//Getters y setters
-	inline list<Food*> getFoodList() { return foods_; }
+	inline vector<Food*> getFoodList() { return foods_; }
 	inline bool isEmpty() { return foods_.empty(); }
 	inline Vector2D getPos() { return pos; }
 	inline Vector2D getVel() { return vel; }
@@ -36,8 +36,8 @@ class Dish
 	inline void setVel(Vector2D value) { vel = value; }
 	
  private:
-	 list<Food*>::iterator currentFood;
-	 list<Food*> foods_;
+	 vector<Food*>::iterator currentFood;
+	 vector<Food*> foods_;
 	 Vector2D pos;
 	 Vector2D vel;
 	 int height;

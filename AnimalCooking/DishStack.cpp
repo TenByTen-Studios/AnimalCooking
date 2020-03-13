@@ -16,7 +16,8 @@ Dish* DishStack::getDish(Vector2D pos)
 	if (dishPool->getNumDishes() < maxDishes)
 	{
 		Dish* d = new Dish(pos);
-		dishPool->addDish(d);		
+		dishPool->addDish(d);	
+		
 		return d;
 	}
 	else return nullptr;

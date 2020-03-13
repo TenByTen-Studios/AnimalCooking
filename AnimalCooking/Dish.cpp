@@ -18,14 +18,13 @@ void Dish::addFood(Food* f)
 			currentFood = foods_.begin();
 		}
 	}
-
 }
 
 Food* Dish::takeFood()
 {//si la lista no se ha vaciado pone el iterador al principio para evitar errores
 	if (!foods_.empty()) {
 		Food* aux = *currentFood;
-		foods_.remove(*currentFood);
+		//foods_.remove(*currentFood);
 		if (!foods_.empty())
 			currentFood = foods_.begin();
 		return aux;

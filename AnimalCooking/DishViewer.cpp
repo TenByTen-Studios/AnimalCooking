@@ -12,7 +12,7 @@ void DishViewer::init()
 }
 void DishViewer::draw() 
 {
-	list<Dish*> ls = dp->getDishes();
+	vector<Dish*> ls = dp->getDishes();
 	for (auto i = ls.begin(); i != ls.end(); i++)
 	{				
 		//se renderiza la textura del plato 

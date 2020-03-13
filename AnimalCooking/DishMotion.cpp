@@ -13,7 +13,7 @@ void DishMotion::init()
 
 void DishMotion::update()
 {	
-	list<Dish*> d = dp->getDishes();
+	vector<Dish*> d = dp->getDishes();
 
 	for (auto it = d.begin(); it != d.end(); it++)
 	{
