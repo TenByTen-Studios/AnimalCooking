@@ -2,7 +2,6 @@
 #include "Component.h"
 #include <vector>
 #include"Dish.h"
-using namespace std;
 
 class DishPool : public Component
 {

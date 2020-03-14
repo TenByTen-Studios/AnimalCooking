@@ -31,17 +31,22 @@ Food* Dish::takeFood()
 	}
 	else return nullptr;
 }
-//Comprobamos que no está la lista vacía y no se ha llegado al último elemento
-void Dish::nextFood() {
+//Comprobamos que no está el vector vacío y no se ha llegado al último elemento
+void Dish::nextFood() 
+{
+	cout << "Siguiente";
 	if (!foods_.empty() && currentFood != (--foods_.end()))
 		currentFood++;
 }
-//Comprobamos que no está la lista vacía y no estamos en el primer elemento
-void Dish::previousFood() {
+//Comprobamos que no está el vector vacío y no estamos en el primer elemento
+void Dish::previousFood() 
+{
+	cout << "Anterior";
 	if (!foods_.empty() && currentFood != foods_.begin())
 		currentFood--;
 }
-void Dish::render() {
+void Dish::render() 
+{
 	int k = 0;
 	//Colocamos la comida en el centro del plato y un poco más arriba del fondo del plato
 	//(teniendo en cuenta el índice la comida) y renderizamos

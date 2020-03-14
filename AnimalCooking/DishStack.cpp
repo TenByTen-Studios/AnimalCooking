@@ -11,7 +11,8 @@ void DishStack::init()
 	dishPool = GETCMP1_(DishPool);
 }
 
-Dish* DishStack::getDish(Vector2D pos)
+//Añade un plato al vector de dishes de la DishPool y lo devuelve
+Dish* DishStack::addNewDish(Vector2D pos)
 {
 	if (dishPool->getNumDishes() < maxDishes)
 	{
