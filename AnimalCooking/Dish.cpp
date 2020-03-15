@@ -9,7 +9,7 @@ Dish::Dish(Vector2D pos_)
 	foods_ = vector<Food*>();
 }
 
-// si la lista estaba vacía pone el iterador al principio
+// si el vector estaba vacío pone el iterador al principio
 void Dish::addFood(Food* f)
 {
 	if (f != nullptr) 
@@ -20,7 +20,8 @@ void Dish::addFood(Food* f)
 }
 
 Food* Dish::takeFood()
-{//si el vector no se ha vaciado pone el iterador al principio para evitar errores
+{
+	//si el vector no se ha vaciado pone el iterador al principio para evitar errores
 	if (!foods_.empty()) 
 	{
 		Food* aux = *currentFood;
@@ -34,14 +35,12 @@ Food* Dish::takeFood()
 //Comprobamos que no está el vector vacío y no se ha llegado al último elemento
 void Dish::nextFood() 
 {
-	cout << "Siguiente";
 	if (!foods_.empty() && currentFood != (--foods_.end()))
 		currentFood++;
 }
 //Comprobamos que no está el vector vacío y no estamos en el primer elemento
 void Dish::previousFood() 
 {
-	cout << "Anterior";
 	if (!foods_.empty() && currentFood != foods_.begin())
 		currentFood--;
 }
