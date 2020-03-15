@@ -13,7 +13,7 @@ public:
 	void addDish(Dish* d);
 	void removeDish(Dish* d);
 	int getNumDishes() { return dishes_.size(); }
-	inline vector<Dish*> getDishes() { return dishes_; }
+	inline vector<Dish*>& getDishes() { return dishes_; }
 
 private:
 	vector<Dish*> dishes_;

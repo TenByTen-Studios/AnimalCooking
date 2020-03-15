@@ -24,7 +24,7 @@ class Dish
 	void update();
 
 	//Getters y setters
-	inline vector<Food*> getFoodVector() { return foods_; }
+	inline vector<Food*>& getFoodVector() { return foods_; }
 	inline bool isEmpty() { return foods_.empty(); }
 
 	inline Vector2D getPos() { return pos; }
