@@ -145,20 +145,28 @@ void Shelf::Swap(Transport* player, Resources::PickableType onPlayerHands) {
 
 	//Segun lo que tenga en las manos
 	switch (onPlayerHands) {
-		//SI no tiene nada, le paso mi contenido, diciendole de que tipo es y me quedo con nada
+	//SI no tiene nada, le paso mi contenido, diciendole de que tipo es y me quedo con nada
 	case Resources::PickableType::none:
 		player->pick(content, contentType);
 		content = nullptr;
 		contentType = Resources::PickableType::none;
 		break;
-		//Si tiene comida. SI Y SOLO SI tengo un plato, lo anado a este y le digo al player que lo suelte
+	//Si tiene comida
 	case Resources::PickableType::Food:
+		//->Si hay plato en la repisa se añade a este<-
 		if (contentType == Resources::PickableType::Dish) {
 			static_cast<Dish*>(content)->addFood(static_cast<Food*>(player->getObjectInHands()));
 			player->drop(false);
 		}
+		//->Si no hay plato en la repisa<--
+		else {
+			content = player->getObjectInHands();
+			player->drop(false);
+			player->pick(c, contentType);
+			contentType = onPlayerHands;
+		}
 		break;
-		//En caso de que tenga o un plato o un utensilio hago un intercambio
+	//En caso de que tenga o un plato o un utensilio hago un intercambio
 	default:
 		content = player->getObjectInHands();
 		player->drop(false);
