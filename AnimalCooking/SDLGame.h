@@ -143,6 +143,7 @@ public:
 	inline const double& getCasillaX() const { return casillaX; }
 
 	inline int getNumStars() const { return totalStars_; }
+	inline void addStars(int a) { totalStars_ += a; }
 
 	inline const BubbleKeyShower& getKeyShower() const { return keyShower_; }
 
@@ -164,6 +165,9 @@ public:
 		keyShower_.renderFeedBack(pos, msg, key, player, gPadKey);
 	}
 	inline const bool& getIfFullscreen() const { return imFullscreen; }
+
+	inline bool getRefreshMapState() { return refreshMapState; }
+	inline void setRefreshMapState(bool b) { refreshMapState = b; }
 
 private:
 	SDLGame(string windowTitle_, int width, int height);
@@ -208,6 +212,6 @@ protected:
 	BubbleKeyShower keyShower_;
 
 	static unique_ptr<SDLGame> instance_;
-
+	bool refreshMapState = false;
 };
 

@@ -45,6 +45,8 @@ public:
 	void notEnoughStarsWarning();
 	void setActiveInfoBox(bool b);
 
+	void refreshState();
+
 private:
 	void configPadNavigation();
 	void placeHousesAndButtons();

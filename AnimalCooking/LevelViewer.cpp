@@ -28,6 +28,8 @@ LevelViewer::LevelViewer(int levelTime, int ScoreTime, int barTime, int oneStarP
 		stars = 2;
 	else if (scorePercentage_ * 100 >= oneStarPerc_)
 		stars = 1;
+
+	SDLGame::instance()->addStars(stars);
 	SDLGame::instance()->addStarsPerLevel(stars, SDLGame::instance()->getCurrentLevel());
 }
 

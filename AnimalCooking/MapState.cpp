@@ -165,6 +165,11 @@ void MapState::draw()
 
 void MapState::update()
 {
+	if (game_->getRefreshMapState()) {
+		refreshState();
+		game_->setRefreshMapState(false);
+	}
+
 	if (transition_) {
 
 		xTransition_ += transitionVelocity_ * transitionDirection_;
@@ -719,4 +724,12 @@ void MapState::configPadNavigation() {
 		padNavigation_->addButtonToAnExistingOne(PreviousScreenButton_,nullptr,nullptr,nullptr,levelButtonsPool_.at(0), levelButtonsPool_.at(0),2);
 		padNavigation_->addButtonToAnExistingOne(nextScreenButton_, nullptr, nullptr,levelButtonsPool_.at(i-1),nullptr, levelButtonsPool_.at(i - 1),3);
 	}
+}
+
+void MapState::refreshState() {
+	refreshHousesAndButtons();
+	configPadNavigation();
+
+	if (totalStars_ != nullptr) delete totalStars_;
+	totalStars_ = new Texture(game_->getRenderer(), to_string(game_->getNumStars()), game_->getFontMngr()->getFont(Resources::FontId::QuarkCheese100), hex2sdlcolor("#ffffffff"));
 }

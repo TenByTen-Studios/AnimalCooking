@@ -65,6 +65,8 @@ void EndState::goToMapState(AnimalCooking* ac) {
 
 	MapConfig m(SDLGame::instance()->getName(),false);
 	m.save();
+
+	gameInstance->setRefreshMapState(true);
 }
 void EndState::goToMenuState(AnimalCooking* ac) {
 	goToMapState(ac);

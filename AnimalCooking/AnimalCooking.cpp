@@ -100,7 +100,7 @@ void AnimalCooking::update() {
 	game_->getFSM()->currentState()->update();
 	game_->getFSM()->refresh();
 
-
+	
 }
 
 void AnimalCooking::render() {
