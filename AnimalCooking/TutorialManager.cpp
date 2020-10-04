@@ -16,6 +16,7 @@ void TutorialManager::init()
 				game_->getTextureMngr()->getTexture(Resources::TextureId::TutorialImage2),
 				game_->getTextureMngr()->getTexture(Resources::TextureId::TutorialImage3),
 				game_->getTextureMngr()->getTexture(Resources::TextureId::TutorialImage4),
+				game_->getTextureMngr()->getTexture(Resources::TextureId::TutorialImage4_2),
 				game_->getTextureMngr()->getTexture(Resources::TextureId::TutorialImage5)};
 
 	index_ = images_.begin();

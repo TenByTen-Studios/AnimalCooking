@@ -37,6 +37,7 @@ vector<Resources::ImageInfo> Resources::images_{
 	{Basic, TutorialImage2,"../AnimalCooking/resources/images/Tutorial/tuto3.png"},
 	{Basic, TutorialImage3,"../AnimalCooking/resources/images/Tutorial/tuto4.png"},
 	{Basic, TutorialImage4,"../AnimalCooking/resources/images/Tutorial/tuto5.png"},
+	{Basic, TutorialImage4_2,"../AnimalCooking/resources/images/Tutorial/tuto5_2.png"},
 	{Basic, TutorialImage5,"../AnimalCooking/resources/images/Tutorial/tuto6.png"},
 	{Basic, TutorialBarra,"../AnimalCooking/resources/images/Tutorial/tutorial.png"},
 

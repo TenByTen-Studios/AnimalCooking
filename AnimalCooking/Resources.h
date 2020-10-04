@@ -40,6 +40,7 @@ public:
 		TutorialImage2,
 		TutorialImage3,
 		TutorialImage4,
+		TutorialImage4_2,
 		TutorialImage5,
 		TutorialBarra,
 
