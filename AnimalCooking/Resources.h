@@ -763,6 +763,7 @@ public:
 		star1Sound,
 		star2Sound,
 		star3Sound,
+		washedSound,
 
 		Tecla1, //Variaciones que suenan al pulsar un boton
 		Tecla2,

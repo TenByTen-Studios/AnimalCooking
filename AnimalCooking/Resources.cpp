@@ -746,6 +746,7 @@ vector<Resources::SoundInfo> Resources::sounds_{
 	{Basic, star1Sound,"../AnimalCooking/resources/sounds/1star.wav"},
 	{Basic, star2Sound,"../AnimalCooking/resources/sounds/2star.wav"},
 	{Basic, star3Sound,"../AnimalCooking/resources/sounds/3star.wav"},
+	{Basic, washedSound,"../AnimalCooking/resources/sounds/limpio.mp3"},
 
 	{Basic, Tecla1,"../AnimalCooking/resources/sounds/tecla1.ogg" },
 	{Basic, Tecla2,"../AnimalCooking/resources/sounds/tecla2.ogg" },

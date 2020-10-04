@@ -29,6 +29,7 @@ void Sink::action1(int iDp) {
 
 		//Y SI Y SOLO SI tiene un utensilio le digo que se limpie
 		if (nTries >= maxTries && player->getObjectTypeInHands() == Resources::PickableType::Utensil) {
+			channel = SDLGame::instance()->getAudioMngr()->playChannel(Resources::AudioId::washedSound, 0);
 			static_cast<Utensil*>(player->getObjectInHands())->cleanUp();
 			nTries = 0;
 			sV->setOnAction(false);
