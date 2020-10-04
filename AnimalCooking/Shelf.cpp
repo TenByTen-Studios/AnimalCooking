@@ -167,6 +167,21 @@ void Shelf::Swap(Transport* player, Resources::PickableType onPlayerHands) {
 		}
 		break;
 	//En caso de que tenga o un plato o un utensilio hago un intercambio
+	case Resources::PickableType::Dish:
+		if (contentType == Resources::PickableType::Food) {
+			Food* food = static_cast<Food*>(content);
+			content = player->getObjectInHands();
+			static_cast<Dish*>(content)->addFood(food);
+			player->drop(false);
+			contentType = onPlayerHands;
+		}
+		else {
+			content = player->getObjectInHands();
+			player->drop(false);
+			player->pick(c, contentType);
+			contentType = onPlayerHands;
+		}
+		break;
 	default:
 		content = player->getObjectInHands();
 		player->drop(false);
