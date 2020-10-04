@@ -582,6 +582,7 @@ public:
 			PapeleraFeedBack,
 			BordeTeclaFeedBack,
 			RellenoTeclaFeedBack,
+			WashMe,
 		// images level specific
 		Arroz,
 		ArrozBordeSup,

@@ -43,6 +43,7 @@ protected:
 	Texture* dirtyTexture_;
 	Texture* attackTexture_;
 	Texture* iconTexture_;
+	Texture* wash_;		//Textura para feed de lavar
 	//Rect que se usa para calcular las colisiones entre la hitbox de un ataque y los ingredientes
 
 	//Suciedad

@@ -27,6 +27,7 @@ Utensil::Utensil(Transport* p1, Transport* p2) : Tool(p1, p2) {
 	displayIcon_ = false;
 	lastFrameTick = 0;
 
+	wash_ = SDLGame::instance()->getTextureMngr()->getTexture(Resources::WashMe);
 	GETCMP2(SDLGame::instance()->getTimersViewer(), TimerViewer)->addTimer(dirtTimer_);
 }
 
@@ -93,8 +94,11 @@ void Utensil::render()const {
 		else if (!dirty_ && attacking_) {
 			attackTexture_->render(rect); //EN caso de estar atacando habria que hacer un renderFrame
 		}
-		else
+		else{
+			SDL_Rect rectWash = RECT(position_.getX(), position_.getY() - 20, wash_->getWidth(), wash_->getHeight());
 			dirtyTexture_->render(rect); //Cambiar si los ingredientes vienen todos en una misma textura para usar el clip	
+			wash_->render(rectWash);
+		}
 	}
 	if (displayIcon_) {
 		rect.y -= rect.h;

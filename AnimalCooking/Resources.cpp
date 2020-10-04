@@ -570,6 +570,7 @@ vector<Resources::ImageInfo> Resources::images_{
 		{AllLevels, Panel,"../AnimalCooking/resources/images/FeedBack/General/panel.png"},
 		{AllLevels, BordeTeclaFeedBack,"../AnimalCooking/resources/images/FeedBack/General/TeclaBorde.png"},
 		{AllLevels, RellenoTeclaFeedBack,"../AnimalCooking/resources/images/FeedBack/General/TeclaRelleno.png"},
+		{AllLevels, WashMe,"../AnimalCooking/resources/images/FeedBack/General/washme.png"},
 
 		// images level specific
 		{AllLevels, Aceite,"../AnimalCooking/resources/images/Cocina/foodgivers/alino.png"},
