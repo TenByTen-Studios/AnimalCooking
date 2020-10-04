@@ -103,9 +103,9 @@ void Food::onDrop(bool onfloor)
 		Pickable::onDrop(onfloor);
 		timer_->timerStart();
 		SDLGame::instance()->getAudioMngr()->playChannel(Resources::AudioId::Drop, 0);
-		showHelp = true;
-		inHands = false;
 	}
+	showHelp = true;
+	inHands = false;
 }
 
 void Food::onFloor()
@@ -131,7 +131,9 @@ void Food::action1(int player)
 
 void Food::feedback(int player)
 {
-	if (!inHands && !dead && feedbackVisual_ != nullptr) {
+	if (!inHands && 
+		!dead && 
+		feedbackVisual_ != nullptr) {
 		SDL_Rect destRect = RECT(position_.getX(), position_.getY(), size_.getX(), size_.getY());
 		feedbackVisual_->render(destRect);
 		if (showHelp && SDLGame::instance()->getOptions().showKeyToPress) {

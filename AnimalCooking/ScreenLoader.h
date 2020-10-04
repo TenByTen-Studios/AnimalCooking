@@ -2,6 +2,7 @@
 #include "State.h"
 #include "FSM.h"
 #include "PlayState.h"
+#include "ButtonRenderer.h"
 
 class ScreenLoader : public State
 {
@@ -10,6 +11,7 @@ public:
 	~ScreenLoader() { }
 	void resetResources(); // Resources::Nivel nivel: es un enum que indica que recursos cargar en memoria
 	void updateLength();
+	void draw() override;
 
 	EntityManager* getEntityManager() { return emPlaystate; }
 	const int getLevel() const { return level; }
@@ -29,6 +31,8 @@ private:
 	Entity* buttonGo_;
 	Entity* padNavigation_;
 	EntityManager* emPlaystate;
+	Transform* buttonGoTransform_;
 
 	int level;
+	bool tope = false;
 };

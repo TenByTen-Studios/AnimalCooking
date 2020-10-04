@@ -2,7 +2,6 @@
 #include "SDLGame.h"
 #include "SDLAudioManager.h"
 #include "ButtonBehaviour.h"
-#include "ButtonRenderer.h"
 #include "LoadingBarViewer.h"
 #include "LevelInitializer.h"
 #include "BackGroundViewer.h"
@@ -50,7 +49,7 @@ ScreenLoader::ScreenLoader(int nivel, AnimalCooking* ac) :State(ac), emPlaystate
 	stage->addToGroup(buttonGo_, ecs::GroupID::Layer1);
 
 
-	Transform* tr = buttonGo_->addComponent<Transform>(Vector2D(game_->getWindowWidth() / 2 + game_->getWindowWidth() / 4 + width / 1.7, game_->getWindowHeight() - height - 170), //Pos
+	buttonGoTransform_ = buttonGo_->addComponent<Transform>(Vector2D(game_->getWindowWidth() / 2 + game_->getWindowWidth() / 4 + width / 1.7, game_->getWindowHeight() - height - 170), //Pos
 		Vector2D(), //Dir
 		200, //Width
 		200, //Height
@@ -191,6 +190,26 @@ void ScreenLoader::updateLength()
 
 	SDL_RenderPresent(SDLGame::instance()->getRenderer());
 	SDL_Delay(10);
+}
+
+void ScreenLoader::draw()
+{
+	double offset = 1.5;
+	if (buttonGoTransform_->getH() < 250 && !tope) {
+		buttonGoTransform_->setH(buttonGoTransform_->getH() + offset);
+		buttonGoTransform_->setW(buttonGoTransform_->getW() + offset);
+		buttonGoTransform_->setPosX(buttonGoTransform_->getPos().getX() - offset);
+		buttonGoTransform_->setPosY(buttonGoTransform_->getPos().getY() - offset);
+	}
+	else if (buttonGoTransform_->getH() > 200) {
+		buttonGoTransform_->setH(buttonGoTransform_->getH() - offset);
+		buttonGoTransform_->setW(buttonGoTransform_->getW() - offset);
+		buttonGoTransform_->setPosX(buttonGoTransform_->getPos().getX() + offset);
+		buttonGoTransform_->setPosY(buttonGoTransform_->getPos().getY() + offset);
+		tope = true;
+	}
+	else tope = false;
+	State::draw();
 }
 
 //Inicializa el nivel
